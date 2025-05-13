@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation TP DevOps</title>
+    <style>
+        /* Variables CSS pour faciliter la personnalisation */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --background-color: #f5f7fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+
+        /* Styles généraux */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: linear-gradient(to right bottom, var(--secondary-color) 49%, transparent 50%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin: 2rem 0 1rem 0;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* Styles des cartes pour chaque étape */
+        .step-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            width: 35px;
+            height: 35px;
+            text-align: center;
+            line-height: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .step-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-title h3 {
+            margin: 0;
+        }
+
+        /* Styles des images */
+        .image-container {
+            margin: 1.5rem 0;
+        }
+
+        .image-box {
+            background-color: var(--background-color);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .image-box h4 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .instruction {
+            background-color: rgba(52, 152, 219, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .result {
+            background-color: rgba(46, 204, 113, 0.1);
+            border-left: 4px solid #2ecc71;
+            padding: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .step-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Travail à faire N°1 DevOps - Docker</h1>
+        <p>Commandes Docker utilisées pendant le TP</p>
+    </header>
+
+    <div class="container">
+        <h2>Travail à faire N°1</h2>
+        <!-- Étape 1 du TP1 -->
+        <section class="step-card">
+            <div class="step-title">
+                <span class="step-number">1</span>
+                <h3>Lancement du conteneur Nginx</h3>
+            </div>
+            <div class="image-container">
+                <div class="image-box">
+                    <img src="TP01_etape_01.png" alt="Étape 1 - Docker run">
+                </div>
+            </div>
+            <div class="instruction">
+                <p>J'ai utilisé la commande <code>docker run -d -p 8081:80 nginx</code> pour lancer un conteneur Nginx en mode détaché (-d) et mapper le port 8081 de l'hôte vers le port 80 du conteneur.</p>
+            </div>
+        </section>
+
+        <!-- Étape 2 -->
+        <section class="step-card">
+            <div class="step-title">
+                <span class="step-number">2</span>
+                <h3>Vérification des conteneurs en cours d'exécution</h3>
+            </div>
+            <div class="image-container">
+                <div class="image-box">
+                    <img src="TP01_etape_02.png" alt="Étape 2 - Docker ps">
+                </div>
+                <div class="image-box">
+                    <img src="TP01_etape_02_rendu.png" alt="Liste des conteneurs actifs">
+                </div>
+            </div>
+            <div class="instruction">
+                <p>J'ai utilisé la commande <code>docker ps</code> pour lister tous les conteneurs en cours d'exécution, voir leurs ID, noms, ports mappés et autres informations.</p>
+            </div>
+        </section>
+
+        <!-- Étape 3 -->
+        <section class="step-card">
+            <div class="step-title">
+                <span class="step-number">3</span>
+                <h3>Lancement d'un second conteneur Nginx</h3>
+            </div>
+            <div class="image-container">
+                <div class="image-box">
+                    <img src="TP01_etape_03.png" alt="Étape 3 - Second Docker run">
+                </div>
+                <div class="image-box">
+                    <img src="TP01_etape_03_rendu.png" alt="Résultat après lancement du second conteneur">
+                </div>
+            </div>
+            <div class="instruction">
+                <p>J'ai utilisé la commande <code>docker run -d -p 8082:80 nginx</code> pour lancer un second conteneur Nginx en mappant cette fois le port 8082 de l'hôte vers le port 80 du conteneur.</p>
+            </div>
+        </section>
+    
+        <h2 style="margin-top: 3rem;">Travail à faire N°2</h2>
+        
+        <!-- Étape 1 du TP2 -->
+        <section class="step-card">
+            <div class="step-title">
+                <span class="step-number">1</span>
+                <h3>Lancement du conteneur MySQL en arrière-plan</h3>
+            </div>
+            <div class="image-container">
+                <div class="image-box">
+                    <img src="tp02/TP02_etape01.png" alt="Étape 1 - Lancement MySQL">
+                </div>
+            </div>
+            <div class="instruction">
+                <p>J'ai utilisé la commande <code>docker run -d --name my-mysql -e MYSQL_ROOT_PASSWORD=mypassword -p 8082:3306 mysql</code> pour lancer un conteneur MySQL en mode détaché avec un mot de passe racine défini et un mappage du port 8082.</p>
+            </div>
+        </section>
+
+        <!-- Étape 2 du TP2 -->
+        <section class="step-card">
+            <div class="step-title">
+                <span class="step-number">2</span>
+                <h3>Lancement interactif du conteneur MySQL</h3>
+            </div>
+            <div class="image-container">
+                <div class="image-box">
+                    <img src="tp02/TP02_etape02.png" alt="Étape 2 - MySQL interactif">
+                </div>
+            </div>
+            <div class="instruction">
+                <p>J'ai utilisé la commande <code>docker run -it --name my-mysql -e MYSQL_ROOT_PASSWORD=mypassword mysql</code> pour lancer un conteneur MySQL en mode interactif avec un terminal attaché.</p>
+            </div>
+        </section>
+
+        <!-- Étape 3 du TP2 -->
+        <section class="step-card">
+            <div class="step-title">
+                <span class="step-number">3</span>
+                <h3>Démarrage du conteneur MySQL en mode interactif</h3>
+            </div>
+            <div class="image-container">
+                <div class="image-box">
+                    <img src="tp02/TP02_etape03.png" alt="Étape 3 - Démarrage MySQL">
+                </div>
+            </div>
+            <div class="instruction">
+                <p>J'ai utilisé la commande <code>docker start -ai my-mysql</code> pour démarrer un conteneur MySQL existant en mode interactif et connecté à son terminal.</p>
+            </div>
+        </section>
+
+        <!-- Étape 4 du TP2 -->
+        <section class="step-card">
+            <div class="step-title">
+                <span class="step-number">4</span>
+                <h3>Utilisation de MySQL dans le conteneur</h3>
+            </div>
+            <div class="image-container">
+                <div class="image-box">
+                    <img src="tp02/TP02_etape04.png" alt="Étape 4 - Utilisation MySQL">
+                </div>
+            </div>
+            <div class="instruction">
+                <p>Après avoir lancé le conteneur MySQL, j'ai pu utiliser le shell MySQL pour exécuter des commandes SQL et interagir avec la base de données.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p></p>
+    </footer>
+</body>
+</html>
